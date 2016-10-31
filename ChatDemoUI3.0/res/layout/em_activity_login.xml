@@ -4,25 +4,11 @@
     android:layout_height="match_parent"
     android:background="#eff2f6"
     android:orientation="vertical" >
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="1" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true"
-            android:src="@drawable/em_welcom_logo" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" >
-
+        android:layout_weight="1"
+        android:orientation="vertical">
         <RelativeLayout
             android:id="@+id/rl_username"
             android:layout_width="match_parent"
@@ -30,7 +16,11 @@
             android:layout_marginLeft="28dp"
             android:layout_marginRight="28dp"
             android:background="#fff" >
-
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="用户名："
+                android:layout_centerVertical="true"/>
             <ImageView
                 android:id="@+id/iv_username"
                 android:layout_width="wrap_content"
@@ -39,7 +29,6 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dip"
                 android:src="@drawable/em_icon_account" />
-
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
@@ -47,12 +36,11 @@
                 android:layout_centerVertical="true"
                 android:background="@null"
                 android:hint="@string/user_name"
-                android:paddingLeft="10dip"
+                android:paddingLeft="90dip"
                 android:singleLine="true"
                 android:textColor="#000"
                 android:textSize="18sp" />
         </RelativeLayout>
-
         <RelativeLayout
             android:id="@+id/rl_password"
             android:layout_width="match_parent"
@@ -62,7 +50,11 @@
             android:layout_marginRight="28dp"
             android:layout_marginTop="10dp"
             android:background="#fff" >
-
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="密  码："
+                android:layout_centerVertical="true"/>
             <ImageView
                 android:id="@+id/iv_password"
                 android:layout_width="wrap_content"
@@ -71,7 +63,6 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dip"
                 android:src="@drawable/em_icon_pwd" />
-
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
@@ -80,7 +71,7 @@
                 android:background="@null"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:paddingLeft="10dip"
+                android:paddingLeft="90dip"
                 android:singleLine="true"
                 android:textSize="18sp" />
         </RelativeLayout>
@@ -93,37 +84,56 @@
             android:layout_marginRight="30dp"
             android:layout_marginTop="30dp"
             android:orientation="horizontal" >
-
             <Button
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
                 android:layout_weight="1"
-                android:background="@drawable/em_button_register_bg"
+                android:background="#a7d84c"
                 android:gravity="center"
                 android:onClick="register"
                 android:paddingBottom="7dp"
                 android:paddingTop="7dp"
-                android:text="@string/register"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:layout_weight="1"
-                android:background="@drawable/em_button_login_bg"
-                android:gravity="center"
-                android:onClick="login"
-                android:paddingBottom="7dp"
-                android:paddingTop="7dp"
-                android:text="@string/login"
+                android:text="登录"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
         </LinearLayout>
-    </RelativeLayout>
+        <RelativeLayout
 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="登录遇到问题？"
+                android:gravity="right"
+                android:textSize="20sp"
+                android:textColor="@color/button_blue"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:gravity="bottom">
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:onClick="login"
+                android:paddingBottom="7dp"
+                android:layout_marginTop="190dp"
+                android:text="注册"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
