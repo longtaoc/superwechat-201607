@@ -50,7 +50,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-import cn.ucai.superwechat.DemoHelper;
+import cn.ucai.superwechat.SuperWeChatHelper;
 import cn.ucai.superwechat.R;
 
 public class VideoCallActivity extends CallActivity implements OnClickListener {
@@ -120,7 +120,7 @@ public class VideoCallActivity extends CallActivity implements OnClickListener {
         }
         setContentView(R.layout.em_activity_video_call);
 
-        DemoHelper.getInstance().isVideoCalling = true;
+        SuperWeChatHelper.getInstance().isVideoCalling = true;
         callType = 1;
         
         getWindow().addFlags(
@@ -582,7 +582,7 @@ public class VideoCallActivity extends CallActivity implements OnClickListener {
     
     @Override
     protected void onDestroy() {
-        DemoHelper.getInstance().isVideoCalling = false;
+        SuperWeChatHelper.getInstance().isVideoCalling = false;
         stopMonitor();
         if(isRecording){
             callHelper.stopVideoRecord();
