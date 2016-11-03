@@ -70,7 +70,7 @@ public class LoginActivity extends BaseActivity {
 
     String currentUsername;
     String currentPassword;
-    ProgressDialog pd=null;
+    ProgressDialog pd;
     LoginActivity mContext;
 
     @Override
@@ -141,7 +141,7 @@ public class LoginActivity extends BaseActivity {
         }
 
         progressShow = true;
-        pd = new ProgressDialog(mContext);
+        pd = new ProgressDialog(LoginActivity.this);
         pd.setCanceledOnTouchOutside(false);
         pd.setOnCancelListener(new OnCancelListener() {
 
@@ -279,5 +279,11 @@ public class LoginActivity extends BaseActivity {
                 MFGT.gotoRegister(this);
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        pd.dismiss();
     }
 }
